@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueGeolocation from 'vue-browser-geolocation'
 
 Vue.config.productionTip = false
+
+Vue.use(VueGeolocation)
 
 /* eslint-disable no-new */
 new Vue({

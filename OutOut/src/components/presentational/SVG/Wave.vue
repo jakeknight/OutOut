@@ -59,7 +59,8 @@ export default {
 <style lang="scss" scoped>
 	svg {
 		position: fixed;
-		bottom: 0;
+    bottom: 0;
+    z-index: 5;
     width: 100%;
 	}
 </style>

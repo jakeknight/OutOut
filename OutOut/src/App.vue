@@ -1,15 +1,15 @@
 <template lang="pug">
   #app
-    splash
+    location
     router-view(v-show="false")
 </template>
 
 <script>
-import Splash from './views/Splash.vue'
+import Location from './views/Location.vue'
 export default {
   name: 'app',
   components: {
-    Splash
+    Location
   }
 }
 </script>

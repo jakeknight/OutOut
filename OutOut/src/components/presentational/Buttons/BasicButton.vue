@@ -19,17 +19,19 @@ export default {
 
 <style lang="scss">
   .basic-button {
-    width:100%;
-    padding: 10px;
+    width: 70%;
+    padding: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
     text-align: center;
     font-size: 16px;
-    border-radius: 10%;
+    border-radius: 50px;
     color: white;
     border: 2px solid white;
+    opacity: 0.8;
     &__text {
       font-size: 14px;
     }
