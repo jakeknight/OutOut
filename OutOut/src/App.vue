@@ -1,14 +1,18 @@
 <template lang="pug">
   #app
-    router-view
+    splash
+    router-view(v-show="false")
 </template>
 
 <script>
+import Splash from './views/Splash.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Splash
+  }
 }
 </script>
 
-<style lang="scss">
-
+<style lang="scss" src="@/assets/scss/main.scss">
 </style>
