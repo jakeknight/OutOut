@@ -3,3 +3,9 @@
 html, body, * {
   font-family: 'Proxima Nova';
 }
+
+.page {
+  &--index {
+    background: linear-gradient(#302675, #081b44);
+  }
+}

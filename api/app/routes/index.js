@@ -1,5 +1,5 @@
-const placesRoutes = require('./places_routes');
+const placesRoutes = require('./places_routes')
 
-module.exports = function(app, db) {
-  placeRoutes(app);
-};
+module.exports = function(app) {
+  placesRoutes(app)
+}
