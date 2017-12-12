@@ -1,15 +1,31 @@
 <template lang="pug">
   #app
-    location
-    router-view(v-show="false")
+    location(v-show="gotResults")
+    router-view(v-show="!gotResults")
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Location from './views/Location.vue'
 export default {
   name: 'app',
   components: {
     Location
+  },
+  data () {
+    return {
+      gotResults: false
+    }
+  },
+  watch: {
+    places () {
+      // this.gotResults = true
+    }
+  },
+  computed: {
+    ...mapState([
+      'places'
+    ])
   }
 }
 </script>

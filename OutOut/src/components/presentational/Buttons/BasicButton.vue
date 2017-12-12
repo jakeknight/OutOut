@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss">
   .basic-button {
-    width: 70%;
+    width: 100%;
     padding: 15px;
     cursor: pointer;
     display: flex;
@@ -28,7 +28,7 @@ export default {
     justify-content: center;
     text-align: center;
     font-size: 16px;
-    border-radius: 50px;
+    border-radius: 10px;
     color: white;
     border: 2px solid white;
     opacity: 0.8;

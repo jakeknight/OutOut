@@ -9,3 +9,7 @@ export const getPlaces = ({commit}, coordinates) => {
       console.log(err)
     })
 }
+
+export const setActivePlace = ({ commit }, id) => {
+  commit('setActivePlace', id)
+}

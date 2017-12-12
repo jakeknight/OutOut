@@ -2,11 +2,13 @@
   .location
     .location__loader(v-show="loaderActive" ref="loader")
       lottie(:options="loaderOptions" :height="357" :width="deviceWidth")
-    //- .location__find(@click="getLocation" ref="locationFind")
+    //- .location__find(@click="getLocation" v-show="permissionsErr" ref="locationFind")
     //-   basic-button(
     //-     text="FIND LOCATION"
     //-     color="transparent"
     //-   )
+    .location__error(v-show="errorMessage")
+      span
     .location__animations
       wave()
 </template>
@@ -31,6 +33,8 @@ export default {
     return {
       loaderOptions: {animationData: animationData},
       loaderActive: false,
+      errorMessage: false,
+      showButton: false,
       deviceHeight: window.innerHeight,
       deviceWidth: window.innerWidth
     }
@@ -44,10 +48,16 @@ export default {
     ]),
     getLocation () {
       this.loaderActive = true
+      this.permissionsErr = false
       this.loaderAnimate()
       this.$getLocation()
         .then(coordinates => {
           this.getPlaces(coordinates)
+        })
+        .catch(err => {
+          console.log(err)
+          this.loaderActive = false
+          this.permissionsErr = true
         })
     },
     loaderAnimate () {
