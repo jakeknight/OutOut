@@ -1,4 +1,5 @@
 export default {
   places: [],
-  activePlace: []
+  activePlace: [],
+  popUpActive: false
 }

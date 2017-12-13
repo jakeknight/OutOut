@@ -10,3 +10,7 @@ export const setActivePlace = (state, id) => {
   })
   state.activePlace.push(...activePlace)
 }
+
+export const togglePopUp = (state) => {
+  state.popUpActive = !state.popUpActive
+}

@@ -1,9 +1,11 @@
 <template lang="pug">
   .places-holder
-    transition(class="place-holder__popup" tag="div" name="slide-fade")
+    .places-holder__popup(
+      v-hammer:swipe.down="togglePopUp"
+    )
       place-pop-up(
-        v-show="popUpActive"
         :data="activePlace[0]"
+        :activeState="popUpActive"
       )
     .places-holder__place(
       v-for="place, index in data"
@@ -27,38 +29,32 @@ export default {
     PlacePopUp
   },
   data () {
-    return {
-      popUpActive: false
-    }
+    return {}
   },
   props: {
     data: Object / Array
   },
   methods: {
     ...mapActions([
-      'setActivePlace'
+      'setActivePlace',
+      'togglePopUp'
     ]),
     showPlacePopUp (id) {
       this.setActivePlace(id)
-      this.popUpActive = !this.popUpActive
+      this.togglePopUp()
     }
   },
   computed: {
     ...mapState([
-      'activePlace'
+      'activePlace',
+      'popUpActive'
     ])
   }
 }
 </script>
 
 <style lang="scss">
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(100%) !important;
-}
+
 </style>
 
 

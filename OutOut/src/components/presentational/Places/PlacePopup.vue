@@ -1,20 +1,21 @@
 <template lang="pug">
-  .place-pop-up
-    .place-pop-up__icon
-      | ^
-    .place-pop-up__content
-      .place-pop-up__content__image
-        img(src="imgSrc")
-      .place-pop-up__content__name
-        span {{ data.name }}
-      .place-pop-up__content__rating
-      span {{ data.rating }}
-      .place-pop-up__content__button
-        basic-button(
-          text="Get directions"
-          color="green"
-          textColor="white"
-        )
+  transition(tag="div" name="slide-fade")
+    .place-pop-up(v-show="activeState")
+      .place-pop-up__icon
+        | ^
+      .place-pop-up__content
+        .place-pop-up__content__image
+          img(src="imgSrc")
+        .place-pop-up__content__name
+          span {{ data.name }}
+        .place-pop-up__content__rating
+        span {{ data.rating }}
+        .place-pop-up__content__button
+          basic-button(
+            text="Get directions"
+            color="green"
+            textColor="white"
+          )
 </template>
 
 <script>
@@ -25,7 +26,8 @@ export default {
     BasicButton
   },
   props: {
-    data: Object / Array
+    data: Object / Array,
+    activeState: Boolean
   }
 }
 </script>
@@ -44,5 +46,14 @@ export default {
   &__icon {
     text-align: center;
   }
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease-in-out;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(100%) !important;
 }
 </style>

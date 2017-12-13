@@ -4,11 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import VueGeolocation from 'vue-browser-geolocation'
 
-Vue.config.productionTip = false
+import VueGeolocation from 'vue-browser-geolocation'
+import { VueHammer } from 'vue2-hammer'
+
+Vue.config.productionTip = true
 
 Vue.use(VueGeolocation)
+Vue.use(VueHammer)
 
 /* eslint-disable no-new */
 new Vue({

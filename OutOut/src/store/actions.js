@@ -13,3 +13,7 @@ export const getPlaces = ({commit}, coordinates) => {
 export const setActivePlace = ({ commit }, id) => {
   commit('setActivePlace', id)
 }
+
+export const togglePopUp = ({ commit }) => {
+  commit('togglePopUp')
+}
