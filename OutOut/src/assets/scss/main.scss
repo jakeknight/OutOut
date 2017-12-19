@@ -1,11 +1,12 @@
 @import './vendor/normalize';
 
 html, body, * {
-  font-family: 'Proxima Nova';
+  font-family: 'Avenir Next';
 }
 
 .page {
   &--index {
-    background-color: #f6f6f6;
+    background-color:#252665;
+    height: 100vh;
   }
 }

@@ -1,5 +1,14 @@
 export default {
+  userLocation: {
+    lng: 0,
+    lat: 0
+  },
   places: [],
   activePlace: [],
-  popUpActive: false
+  distance: '',
+  popUpActive: false,
+  reviewData: {
+    place: '',
+    data: []
+  }
 }

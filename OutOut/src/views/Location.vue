@@ -1,5 +1,7 @@
 <template lang="pug">
   .location
+    .location__header
+      main-header()
     .location__loader(v-show="loaderActive" ref="loader")
       lottie(:options="loaderOptions" :height="357" :width="deviceWidth")
     //- .location__find(@click="getLocation" v-show="permissionsErr" ref="locationFind")
@@ -16,18 +18,19 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import Lottie from 'vue-lottie'
-import { TweenMax } from 'gsap'
+// import { TweenMax } from 'gsap'
 
 import BasicButton from '../components/presentational/Buttons/BasicButton.vue'
+import MainHeader from '../components/presentational/Header/MainHeader.vue'
 import Wave from '../components/presentational/SVG/Wave.vue'
-
 import animationData from '../assets/js/animationData/location.json'
 export default {
   name: 'location',
   components: {
     BasicButton,
     Wave,
-    Lottie
+    Lottie,
+    MainHeader
   },
   data () {
     return {
@@ -61,7 +64,7 @@ export default {
         })
     },
     loaderAnimate () {
-      TweenMax.to(this.$refs.loader, 1.5, {opacity: 1})
+
     }
   },
   computed: {
@@ -83,7 +86,7 @@ export default {
     bottom: 0;
     background: linear-gradient(#302675, #081b44);
     &__loader {
-      opacity: 0;
+
     }
     &__find {
       position: relative;

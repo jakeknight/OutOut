@@ -6,6 +6,8 @@
       place-pop-up(
         :data="activePlace[0]"
         :activeState="popUpActive"
+        :location="location"
+        :distance="distance"
       )
     .places-holder__place(
       v-for="place, index in data"
@@ -32,7 +34,9 @@ export default {
     return {}
   },
   props: {
-    data: Object / Array
+    data: Object / Array,
+    location: Object,
+    distance: String
   },
   methods: {
     ...mapActions([
