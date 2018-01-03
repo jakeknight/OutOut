@@ -1,14 +1,16 @@
 <template lang="pug">
   .reviews
-    .reviews__back
-      back-icon(
-        @click="goBack"
-      )
+    .reviews__back(
+      @click="goBack"
+    )
+      back-icon()
     .reviews__title
       h1 Reviews
+    .reviews__subtitle
+      h2 {{ reviewData.place }}
     .review__reviews
       review-holder(
-        :data="reviewData"
+        :data="reviewData.data"
       )
 </template>
 
@@ -30,7 +32,7 @@ export default {
   },
   methods: {
     goBack  () {
-
+      this.$router.go(-1)
     }
   }
 }
@@ -52,7 +54,16 @@ export default {
     transform: rotate(180deg);
   }
   &__title {
-
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+  &__subtitle {
+    h2 {
+      font-weight: normal;
+      font-size: 18px;
+      margin-top: 0px;
+    }
   }
 }
 </style>

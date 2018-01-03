@@ -2,31 +2,43 @@
   .main-header(
     ref="main-header"
   )
-    .main-header__logo
+    .main-header__logo()
       main-logo()
-    .main-header__filter
+    .main-header__filter(
+      v-show="gotPlaces"
+    )
       span.main-header__filter__top
       span.main-header__filter__middle
       span.main-header__filter__bottom
-    .main-header__burger
+    .main-header__burger(
+      v-show="gotPlaces"
+      @click="toggleNav()"
+      )
       nav-icon()
 </template>
 
 <script>
 import MainLogo from '../Logo/Logo.vue'
 import NavIcon from '../Navigation/NavIcon.vue'
-// import { TweenLite } from 'gsap'
+
 export default {
   name: 'main-header',
   components: {
     MainLogo,
     NavIcon
   },
-  mounted () {
-    // const header = this.$refs['main-header']
-    // setTimeout(() => {
-    //   TweenLite.to(header, 0.8, {opacity: 0})
-    // }, 3000)
+  props: {
+    gotPlaces: Boolean
+  },
+  data () {
+    return {
+      // contentLoaded: false
+    }
+  },
+  methods: {
+    toggleNav () {
+      console.log('hit')
+    }
   }
 }
 </script>
@@ -36,7 +48,7 @@ export default {
     position: relative;
     top: 0;
     padding: 20px;
-    height: 80px;
+    height: 100px;
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;

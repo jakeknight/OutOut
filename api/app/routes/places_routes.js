@@ -1,6 +1,10 @@
 const axios = require('axios')
 
 module.exports = function(app) {
+    app.get('/status', (req, res) => {
+        res.send('Online')
+    });
+
     app.get('/out/:lat/:lng', (req, res) => {
         axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.lng}&radius=400&type=bar&keyword=live_music&key=${process.env.GOOGLE_PLACES_KEY}`)
             .then((response) => {

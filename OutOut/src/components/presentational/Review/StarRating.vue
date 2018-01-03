@@ -1,6 +1,7 @@
 <template lang="pug">
-  .rating(@click="reviewPage")
+  .rating()
     star-rating(
+      :read-only="true"
       :rating="rating"
       :show-rating="false"
       :increment="0.01"
@@ -9,8 +10,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 import StarRating from 'vue-star-rating'
 export default {
   props: {
@@ -19,15 +18,7 @@ export default {
   components: {
     StarRating
   },
-  methods: {
-    reviewPage () {
-      this.$router.push('/review')
-      this.getReview()
-    },
-    ...mapActions([
-      'getReview'
-    ])
-  }
+  methods: {}
 }
 </script>
 

@@ -6,12 +6,14 @@
         .place-pop-up__content__info
           .place-pop-up__content__info__name
             span {{ data.name }}
-          .place-pop-up__content__info__rating
+          .place-pop-up__content__info__rating(
+            @click="reviewPage()"
+          )
             star-rating(
               :rating="data.rating"
             )
           .place-pop-up__content__info__status
-           span Open now
+           span Open
           .place-pop-up__content__info__distance
             walking-distance(
               :distance="distance"
@@ -56,8 +58,13 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getDistance'
-    ])
+      'getDistance',
+      'getReview'
+    ]),
+    reviewPage () {
+      this.$router.push('/review')
+      this.getReview()
+    }
   }
 }
 </script>
@@ -70,7 +77,6 @@ export default {
   left: 0;
   background-color: white;
   border-radius: 10px 10px 0px 0px;
-  height: 40%;
   width: 100%;
   transform: translateY(0%);
   &__icon {
@@ -90,23 +96,26 @@ export default {
   &__content {
     padding: 20px;
     &__info {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
       &__name {
-      font-size: 18px;
-      font-weight: bold;
-      width: 50%;
+        font-size: 18px;
+        font-weight: 600;
+        width: 50%;
       }
       &__rating {
         display: flex;
         justify-content: flex-end;
         width: 50%;
       }
+      &__distance {
+        padding: 15px 0;
+      }
       &__status {
         font-size: 14px;
-        padding-top: 15px;
+        padding: 15px 0;
         font-weight: 500;
         color: green;
         text-transform: uppercase;

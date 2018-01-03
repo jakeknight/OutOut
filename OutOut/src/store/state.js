@@ -10,5 +10,6 @@ export default {
   reviewData: {
     place: '',
     data: []
-  }
+  },
+  reviewsActive: false
 }

@@ -1,6 +1,8 @@
 <template lang="pug">
   .page.page--index
-    main-header()
+    main-header(
+      :gotPlaces="gotPlaces"
+    )
     results-holder(
       :data="places"
       :location="userLocation"
@@ -18,6 +20,11 @@ export default {
   components: {
     ResultsHolder,
     MainHeader
+  },
+  data () {
+    return {
+      gotPlaces: false
+    }
   },
   computed: {
     ...mapState([

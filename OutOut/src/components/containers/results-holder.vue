@@ -1,7 +1,7 @@
 <template lang="pug">
   .places-holder
     .places-holder__popup(
-      v-hammer:swipe.down="togglePopUp"
+      v-touch:swipe="togglePopUp"
     )
       place-pop-up(
         :data="activePlace[0]"

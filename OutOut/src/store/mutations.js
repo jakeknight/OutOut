@@ -21,7 +21,8 @@ export const setDistance = (state, distance) => {
 }
 
 export const setReviews = (state, reviews) => {
-  state.reviewData = []
+  state.reviewData.data = []
+  state.reviewData.place = state.activePlace[0].name
   state.reviewData.data.push(...reviews)
 }
 

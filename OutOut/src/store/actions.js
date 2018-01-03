@@ -11,6 +11,10 @@ export const getPlaces = ({commit}, coordinates) => {
     })
 }
 
+export const goBack = ({commit}) => {
+  commit('goBack')
+}
+
 export const setActivePlace = ({ commit }, id) => {
   commit('setActivePlace', id)
 }

@@ -1,6 +1,6 @@
 {
   "name": "outout",
-  "short_name": "OutOut",
+  "short_name": "outout",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
@@ -14,7 +14,8 @@
     }
   ],
   "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#252665",
+  "background_color": "#2196f3"
 }

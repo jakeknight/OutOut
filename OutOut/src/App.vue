@@ -1,8 +1,8 @@
 <template lang="pug">
   #app
-    location(v-show="gotResults")
-    reviews(v-show="!reviewsActive")
-    router-view(v-show="!gotResults")
+    location(v-show="!gotResults")
+    reviews(v-show="reviewsActive")
+    router-view(v-show="gotResults")
 </template>
 
 <script>
@@ -18,18 +18,18 @@ export default {
   },
   data () {
     return {
-      gotResults: false,
-      reviewsActive: false
+      gotResults: false
     }
   },
   watch: {
     places () {
-      // this.gotResults = true
+      this.gotResults = true
     }
   },
   computed: {
     ...mapState([
-      'places'
+      'places',
+      'reviewsActive'
     ])
   }
 }

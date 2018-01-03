@@ -8,7 +8,7 @@
       .review__info__name
         | {{ name }}
       .review__info__date
-       | {{ date }}
+       | {{ date | moment('from') }}
       .review__info__rating
         star-rating(
           :rating="rating"
@@ -38,7 +38,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 12px;
+    padding: 12px 0px 12px 0px;
     border-bottom: 1px solid 	#E0E0E0;
     &__avatar {
       width: 25%;

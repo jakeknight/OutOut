@@ -2,8 +2,8 @@
   .nav-icon( :class="{ active: activeNav }" ref="nav-icon" @click="navToggle")
     span.nav-icon__line.nav-icon__line--short
     span.nav-icon__line
-    span.nav-icon__line.nav-icon__line--cross
-    span.nav-icon__line.nav-icon__line--short
+    span.nav-icon__line.nav-icon__line--cross()
+    span.nav-icon__line.nav-icon__line--short(style="left:0;")
 </template>
 
 
@@ -64,6 +64,7 @@ export default {
     &:nth-of-type(3) {
       display: block !important;
       transform: rotate(-90deg) !important;
+      transition: all 0.4s ease;
     }
     &:nth-of-type(4) {
       width: 0px;
