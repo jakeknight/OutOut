@@ -13,7 +13,7 @@
               :rating="data.rating"
             )
           .place-pop-up__content__info__status
-           span Open
+           span Open now
           .place-pop-up__content__info__distance
             walking-distance(
               :distance="distance"

@@ -4,16 +4,16 @@
   )
     .main-header__logo()
       main-logo()
-    .main-header__filter(
-      v-show="gotPlaces"
-    )
+    //- .main-header__filter(
+    //-   v-show="gotPlaces"
+    //- )
       span.main-header__filter__top
       span.main-header__filter__middle
       span.main-header__filter__bottom
-    .main-header__burger(
-      v-show="gotPlaces"
-      @click="toggleNav()"
-      )
+    //- .main-header__burger(
+    //-   v-show="gotPlaces"
+    //-   @click="toggleNav()"
+    //-   )
       nav-icon()
 </template>
 

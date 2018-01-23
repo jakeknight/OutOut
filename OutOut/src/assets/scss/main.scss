@@ -1,7 +1,9 @@
 @import './vendor/normalize';
 
-html, body, * {
+html, body {
+  margin: 0 auto;
   font-family: 'Avenir Next';
+  max-width: 414px;
 }
 
 .page {
